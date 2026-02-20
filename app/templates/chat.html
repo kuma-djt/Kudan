@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Agent Chat</h2>
+<form method="post"><input type="text" name="prompt" style="width:70%" placeholder="Ask strategy lab..."/><button type="submit">Send</button></form>
+{% if response %}<pre>{{ response }}</pre>{% endif %}
+{% endblock %}
