@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Settings</h2>
+<p>LIVE_TRADING env: {{ live_trading_env }}</p>
+<p>Armed: {{ armed }}</p>
+<p>Kill switch: {{ kill_switch }}</p>
+<h3>Live arming</h3>
+<form action="/api/arm_live" method="post"><input type="text" name="phrase" placeholder="ARM LIVE TRADING"/><button type="submit">Arm</button></form>
+<form action="/api/disarm_live" method="post"><button type="submit">Disarm</button></form>
+<h3>Risk parameters</h3>
+<pre>{{ risk }}</pre>
+{% endblock %}

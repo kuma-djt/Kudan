@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Strategies</h2>
+<table><tr><th>ID</th><th>Name</th><th>Mode</th><th>Promote</th></tr>
+{% for s in strategies %}
+<tr><td>{{ s.id }}</td><td>{{ s.name }}</td><td>{{ s.mode }}</td>
+<td>
+<form hx-post="/api/strategy/{{ s.id }}/promote" hx-swap="none" method="post">
+<select name="mode"><option value="paper">paper</option><option value="canary">canary</option><option value="live">live</option></select>
+<button type="submit">Apply</button>
+</form></td></tr>
+{% endfor %}</table>
+<p>Backtest/report artifacts placeholder for MVP.</p>
+{% endblock %}

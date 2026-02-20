@@ -1,0 +1,12 @@
+services:
+  kudan:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - kudan_data:/data
+    restart: unless-stopped
+volumes:
+  kudan_data:

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<p>Equity: {{ state.equity }}</p>
+<p>Drawdown: {{ "%.2f"|format(state.drawdown*100) }}%</p>
+<p>Daily PnL: {{ state.daily_pnl }}</p>
+<p>Exposure: {{ state.exposure }}</p>
+<p>Mode: {{ state.mode }}</p>
+<p>Kill Switch: {{ state.kill_switch }}</p>
+<form action="/actions/run_once" method="post"><button type="submit">Run Once</button></form>
+<h3>Recent Runs</h3>
+<ul>{% for run in runs %}<li>{{ run.created_at }} - {{ run.status }} - {{ run.summary }}</li>{% endfor %}</ul>
+{% endblock %}

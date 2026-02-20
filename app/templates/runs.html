@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Runs</h2>
+{% for run in runs %}
+<div><strong>#{{ run.id }} {{ run.created_at }} {{ run.status }}</strong><pre>{{ run.details }}</pre></div>
+{% endfor %}
+<h3>Risk Events</h3>
+<ul>{% for e in risk_events %}<li>{{ e.created_at }} {{ e.reason }} {{ e.context }}</li>{% endfor %}</ul>
+{% endblock %}

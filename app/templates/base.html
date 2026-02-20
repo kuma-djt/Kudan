@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>KudanForge</title>
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <style>body{font-family:Arial;margin:20px} nav a{margin-right:12px} table,th,td{border:1px solid #ddd;border-collapse:collapse;padding:6px}</style>
+</head>
+<body>
+<nav>
+  <a href="/">Dashboard</a><a href="/chat">Chat</a><a href="/strategies">Strategies</a><a href="/runs">Runs</a><a href="/settings">Settings</a>
+</nav><hr/>
+{% block content %}{% endblock %}
+</body>
+</html>
